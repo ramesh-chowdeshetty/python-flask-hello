@@ -8,7 +8,7 @@ RUN  apt-get -q update \
 && apt-get purge -y --auto-remove python3-dev build-essential
 
 
-EXPOSE 8080
+EXPOSE 5000
 COPY /app /app
 
 ENTRYPOINT ["/usr/bin/python3", "/app/dokuu.py"]
