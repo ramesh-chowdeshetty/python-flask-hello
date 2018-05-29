@@ -11,4 +11,4 @@ RUN  apt-get -q update \
 EXPOSE 8080
 COPY /app /app
 
-ENTRYPOINT ["/usr/bin/python3", "/app/app.py"]
+ENTRYPOINT ["/usr/bin/python3", "/app/dokuu.py"]
