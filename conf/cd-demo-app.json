@@ -1,6 +1,6 @@
 {
   "id": "/flask-app123",
-  "cmd":"python dokuu.py",
+  "cmd":"python3 dokuu.py",
   "container": {
     "type": "DOCKER",
     "docker": {
