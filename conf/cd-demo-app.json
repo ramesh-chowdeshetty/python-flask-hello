@@ -1,5 +1,6 @@
 {
   "id": "/flask-app123",
+  "acceptedResourceRoles": ["slave_public"],
   "container": {
     "type": "DOCKER",
     "docker": {
