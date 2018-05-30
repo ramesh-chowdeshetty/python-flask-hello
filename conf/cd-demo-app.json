@@ -18,7 +18,7 @@
   "cpus": 0.1,
   "instances": 1,
   "labels": {
-    "HAPROXY_0_VHOST": "testing-s-PublicSl-747L1SKJX3TP-2107286768.us-east-1.elb.amazonaws.com",
+    "HAPROXY_0_VHOST": "krank-PublicSlaveL-GXQBSOR5RR97-180954826.us-east-1.elb.amazonaws.com",
     "HAPROXY_GROUP": "external",
     "lastChangedBy": "velocity-team@mesosphere.com"
   },
