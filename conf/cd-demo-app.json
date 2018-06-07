@@ -4,7 +4,7 @@
 "container": {
   "type": "DOCKER",
   "docker": {
-    "image": "devk123/testing_20"
+    "image": "mesosphere/python-flask-hello:latest"
   },
   "portMappings": [
     {
