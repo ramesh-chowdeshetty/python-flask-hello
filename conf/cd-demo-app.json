@@ -1,47 +1,36 @@
 {
-"id": "/flask-app123",
-"acceptedResourceRoles": ["slave_public"],
-"container": {
-  "type": "DOCKER",
-  "docker": {
-    "image": "mesosphere/python-flask-hello:latest"
-  },
-  "portMappings": [
-    {
-      "containerPort":81,
-      "hostPort":81,
-      "protocol": "tcp",
-      "name": "flask-app123"
-    }
-  ]
-},
-"cpus": 0.1,
-"instances": 1,
-"labels": {
-   
-   "HAPROXY_GROUP": "external"
-   
- },
-"mem": 128,
-"networks": [
-  {
-    "mode": "container/bridge",
-    "labels": {
-    "HAPROXY_GROUP": "external"
-    }
-  }
-],
-"portDefinitions": [
-   {
-     "protocol": "tcp",
-     "port": 10001,
-     "labels": {
-       "VIP_0": "/dcos-101/app1:10001"
+ "id": "/flask-app123",
+ "acceptedResourceRoles": ["slave_public"],
+ "container": {
+   "type": "DOCKER",
+   "docker": {
+     "image": "mesosphere/python-flask-hello:latest"
+   },
+   "portMappings": [
+     {
+       "containerPort":81,
+       "hostPort":0,
+       "protocol": "tcp",
+       "name": "flask-app123"
      }
+   ]
+ },
+ "cpus": 0.1,
+ "instances": 1,
+ "labels": {
+    "HAPROXY_0_VHOST": "hfy-dcos-PublicSla-1B7RA7MFMTAFE-1163125626.us-east-1.elb.amazonaws.com",
+    "HAPROXY_GROUP": "external",
+    "lastChangedBy": "velocity-team@mesosphere.com"
+  },
+ "mem": 128,
+ "networks": [
+   {
+     "mode": "container/bridge",
+     "labels": {}
    }
  ],
-"upgradeStrategy": {
-  "maximumOverCapacity": 1,
-  "minimumHealthCapacity": 1
-}
+ "upgradeStrategy": {
+   "maximumOverCapacity": 1,
+   "minimumHealthCapacity": 1
+ }
 }
