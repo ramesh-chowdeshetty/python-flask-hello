@@ -1,6 +1,5 @@
 {
  "id": "/flask-app123",
- "acceptedResourceRoles": ["slave_public"],
  "container": {
    "type": "DOCKER",
    "docker": {
@@ -22,6 +21,15 @@
     "HAPROXY_GROUP": "external",
     "lastChangedBy": "velocity-team@mesosphere.com"
   },
+  "portDefinitions": [
+   {
+     "protocol": "tcp",
+     "port": 10001,
+     "labels": {
+       "VIP_0": "/dcos-101/app1:10001"
+     }
+   }
+ ],
  "mem": 128,
  "networks": [
    {
