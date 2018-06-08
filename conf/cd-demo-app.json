@@ -1,5 +1,6 @@
 {
   "id": "/jenkins-deployed-app",
+  "acceptedResourceRoles": ["slave_public"],
   "container": {
     "type": "DOCKER",
     "docker": {
