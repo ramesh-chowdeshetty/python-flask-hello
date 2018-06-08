@@ -1,6 +1,7 @@
 
 {
  "id": "/app",
+ "acceptedResourceRoles": ["slave_public"],
  "instances": 1,
  "container": {
    "type": "DOCKER",
