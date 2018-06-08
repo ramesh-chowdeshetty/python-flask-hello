@@ -11,7 +11,7 @@
        "hostPort":0,
        "protocol": "tcp",
        "name": "flask-app123",
-       "labels": { "VIP_0": "/flask-app123:10001"}
+       "labels": { "VIP_0": "/flask-app123:1003"}
      }
    ]
  },
