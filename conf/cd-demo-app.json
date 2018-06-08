@@ -1,40 +1,35 @@
-
-{ "VIP_0": "10.0.0.1:80" }
-
 {
- "id": "/app",
- "acceptedResourceRoles": ["slave_public"],
- "instances": 1,
- "container": {
-   "type": "DOCKER",
-   "volumes": [],
-   "docker": {
-     "image": "devk123/testing_20"
-   },
-   "portMappings": [
-     {
-       "containerPort": 81,
-       "hostPort": 0,
-       "labels": {
-         "VIP_0": "10.0.0.1:80"
-       },
-       "protocol": "tcp",
-       "name": "app"
-     }
-   ]
- },
- "cpus": 0.1,
- "mem": 128,
- "requirePorts": false,
- "networks": [
-   {
-     "mode": "container",
-     "name": "dcos"
-   }
- ],
- "healthChecks": [],
- "fetch": [],
- "constraints": []
-}
-
+  "id": "/jenkins-deployed-app",
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "devk123/testing_20"
+    },
+    "portMappings": [
+      {
+        "containerPort": 81,
+        "hostPort": 0,
+        "protocol": "tcp",
+        "name": "jenkins-deployed-app"
+      }
+    ]
+  },
+  "cpus": 0.1,
+  "instances": 1,
+  "labels": {
+    "HAPROXY_0_VHOST": "hfy-clust-PublicSl-1IFGLJM1B7PCQ-558430720.us-east-1.elb.amazonaws.com",
+    "HAPROXY_GROUP": "external",
+    "lastChangedBy": "velocity-team@mesosphere.com"
+  },
+  "mem": 128,
+  "networks": [
+    {
+      "mode": "container/bridge",
+      "labels": {}
+    }
+  ],
+  "upgradeStrategy": {
+    "maximumOverCapacity": 1,
+    "minimumHealthCapacity": 1
   }
+}
