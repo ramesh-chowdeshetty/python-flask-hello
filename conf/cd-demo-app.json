@@ -12,9 +12,6 @@
      {
        "containerPort": 81,
        "hostPort": 81,
-       "labels": {
-         "VIP_0": "/app:10000"
-       },
        "protocol": "tcp",
        "name": "app"
      }
