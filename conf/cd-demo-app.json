@@ -1,33 +1,35 @@
+
 {
- "id": "/flask-app123",
+ "id": "/app",
+ "instances": 1,
  "container": {
    "type": "DOCKER",
+   "volumes": [],
    "docker": {
-     "image": "mesosphere/python-flask-hello:latest"
+     "image": "devk123/testing_20"
    },
    "portMappings": [
      {
-       "containerPort":81,
-       "hostPort":0,
+       "containerPort": 81,
+       "hostPort": 0,
+       "labels": {
+         "VIP_0": "/app:10000"
+       },
        "protocol": "tcp",
-       "name": "flask-app123",
-       "labels": { "VIP_0": "/flask-app123:1003"}
+       "name": "app"
      }
    ]
  },
  "cpus": 0.1,
- "instances": 2,
-
  "mem": 128,
+ "requirePorts": false,
  "networks": [
    {
      "mode": "container",
-     "name": "DCOS"
-     
+     "name": "dcos"
    }
  ],
- "upgradeStrategy": {
-   "maximumOverCapacity": 1,
-   "minimumHealthCapacity": 1
- }
+ "healthChecks": [],
+ "fetch": [],
+ "constraints": []
 }
