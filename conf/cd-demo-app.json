@@ -1,36 +1,30 @@
 {
- "id": "/flask-app123",
- "acceptedResourceRoles": ["slave_public"],
- "container": {
-   "type": "DOCKER",
-   "docker": {
-     "image": "mesosphere/python-flask-hello:latest"
-   },
-   "portMappings": [
-     {
-       "containerPort":81,
-       "hostPort":81,
-       "protocol": "tcp",
-       "name": "flask-app123"
-     }
-   ]
- },
- "cpus": 1,
- "instances": 1,
- "labels": {
-   "HAPROXY_0_VHOST": "hfy-dcos-PublicSla-1B7RA7MFMTAFE-1163125626.us-east-1.elb.amazonaws.com",
-   "HAPROXY_GROUP": "external",
-   "lastChangedBy": "velocity-team@mesosphere.com"
- },
- "mem": 512,
- "networks": [
-   {
-     "mode": "container/bridge",
-     "labels": {}
-   }
- ],
- "upgradeStrategy": {
-   "maximumOverCapacity": 1,
-   "minimumHealthCapacity": 1
- }
+  "id": "app",
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "devk123/testing_20",
+      "parameters": [
+        {
+          "key": "log-driver",
+          "value": "none"
+        } 
+      ]
+    },
+    "portMappings": [
+      { "port": 0, "protocol": "tcp" ,
+     "labels": {
+        "VIP_0": "/app:10000"
+      }}
+    ]
+  },
+  "networks": [
+    {
+      "mode": "host"
+    }
+  ],
+  "acceptedResourceRoles": ["slave_public"],
+  "instances": 1,
+  "cpus": 0.1,
+  "mem": 64
 }
