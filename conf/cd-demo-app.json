@@ -4,7 +4,7 @@
  "container": {
    "type": "DOCKER",
    "docker": {
-     "image": "mesosphere/python-flask-hello:latest"
+     "image": "devk123/testing_20"
    },
    "portMappings": [
       { "port": 0, "protocol": "tcp" ,
@@ -19,7 +19,7 @@
  "mem": 512,
  "networks": [
    {
-     "mode": "host",
+     "mode": "host"
    }
  ],
  "upgradeStrategy": {
